@@ -42,6 +42,28 @@ public class Main {
 
     }
 
+    static void mergeSort(Student[] arr, int left, int right) {
+        if (1<right) {
+
+            int m = left+(right-left)/2; // == left_right/2와 동일하지만 오버플로 방지로 사용
+
+            mergeSort(arr, 1, m);
+            mergeSort(arr, m+1, right);
+
+            merge(arr, 1, m, right);
+        }
+    }
+
+    static void merge(Student[] arr, int left, int middle, int right) {
+        Student[] sort = new Student[right-left+1];
+        int l = left;
+        int r = middle + 1;
+        int k = 0;
+        while (l <= middle && r <= right) {
+
+        }
+    }
+
     static class Student implements Comparable<Student>{
 
         String name;
