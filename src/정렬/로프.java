@@ -1,8 +1,6 @@
 package 정렬;
 
 import java.io.*;
-import java.util.PriorityQueue;
-import java.util.StringTokenizer;
 
 /**
  *  입력값
@@ -17,7 +15,7 @@ import java.util.StringTokenizer;
  *  15 10 은 하나만 사용하면 15밖에못들지만
  *  15, 10을합치면 각각에 w/x개만큼 부하가 가해져서 최고 20까지 가능
  */
-public class Main {
+public class 로프 {
 
     static int[] sorted;
 
