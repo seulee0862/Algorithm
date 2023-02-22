@@ -1,7 +1,6 @@
 package 완전탐색;
 
 import java.io.*;
-import java.util.StringTokenizer;
 
 /**
  *
@@ -22,7 +21,7 @@ import java.util.StringTokenizer;
  *  조건이 1000보다 작지 않고 더 큰수까지 가능했으면
  *  등차를 구하는 공식이 조금 까다로웠을 것 같다.
  */
-public class Main {
+public class 한수 {
 
     public static void main(String[] args) throws IOException {
 
