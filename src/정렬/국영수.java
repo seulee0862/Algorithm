@@ -1,10 +1,9 @@
 package 정렬;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
-public class Main {
+public class 국영수 {
 
     /**
      *
@@ -21,46 +20,78 @@ public class Main {
      *  * Comparble 인터페이스의 toComapre사용해서 정렬순서에 맞춰서 정렬
      *  * 정렬된 List 순서대로 출력
      */
-    public static void main(String[] args) {
+    static Student[] sort;
+    public static void main(String[] args) throws IOException {
 
-        Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-        ArrayList<Student> list = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        Student[] arr = new Student[n];
+        StringTokenizer st;
 
         for (int i=0; i<n; i++){
-            String name = scan.next();
-            int korean = scan.nextInt();
-            int english = scan.nextInt();
-            int math = scan.nextInt();
-            list.add(new Student(name, korean, english, math));
+            st = new StringTokenizer(br.readLine());
+            String name = st.nextToken();
+            int korean = Integer.parseInt(st.nextToken());
+            int english = Integer.parseInt(st.nextToken());
+            int math = Integer.parseInt(st.nextToken());
+            arr[i] = new Student(name, korean, english, math);
         }
-        Collections.sort(list);
+        sort = new Student[n];
+        mergeSort(arr, 0, arr.length-1);
 
-        for (Student st : list) {
-            System.out.println(st.name);
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        for (Student st2 : arr) {
+            bw.write(st2.name+"\n");
         }
+        bw.close();
 
     }
 
+
     static void mergeSort(Student[] arr, int left, int right) {
-        if (1<right) {
+        if (left<right) {
 
             int m = left+(right-left)/2; // == left_right/2와 동일하지만 오버플로 방지로 사용
 
-            mergeSort(arr, 1, m);
+            mergeSort(arr, left, m);
             mergeSort(arr, m+1, right);
 
-            merge(arr, 1, m, right);
+            merge(arr, left, m, right);
         }
     }
 
     static void merge(Student[] arr, int left, int middle, int right) {
-        Student[] sort = new Student[right-left+1];
+
         int l = left;
         int r = middle + 1;
-        int k = 0;
+        int k = left;
         while (l <= middle && r <= right) {
+            if (arr[l].compareTo(arr[r]) < 0) {
+                sort[k] = arr[l];
+                l++;
+                k++;
+            }
+            else {
+                sort[k] = arr[r];
+                r++;
+                k++;
+            }
+        }
 
+        while (l <= middle) {
+            sort[k] = arr[l];
+            l++;
+            k++;
+        }
+        while (r <= right) {
+            sort[k] = arr[r];
+            r++;
+            k++;
+        }
+
+        for (int i=left; i<=right; i++) {
+            arr[i] = sort[i];
         }
     }
 
