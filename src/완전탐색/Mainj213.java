@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
  *  조건
  *  사칙연산 우선순위 적용없이 앞에서부터 계산, 숫자위치 안바뀜
  */
-public class Mainj {
+public class Mainj213 {
 
     public static void main(String[] args) throws IOException {
 
