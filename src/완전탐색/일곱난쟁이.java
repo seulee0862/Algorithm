@@ -15,7 +15,7 @@ import java.util.Arrays;
  * 9개의 합을 구한다
  * 2명을 뺐을때 100이되는 경우를 찾기위해 2중포문
  */
-public class Main {
+public class 일곱난쟁이 {
 
     public static void main(String[] args) throws IOException {
 
