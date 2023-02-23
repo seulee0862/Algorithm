@@ -6,7 +6,7 @@ import java.io.*;
  *
  *  길이오름차순 > (숫자만)모든수합 오름차순 > 알파벳 오름차순
  */
-public class Main {
+public class 시리얼번호검색 {
 
     static Serial[] tmpArr;
 
@@ -82,7 +82,6 @@ class Serial implements Comparable<Serial>{
         int result;
         if ((result = this.num.length() - o.num.length() ) != 0) return result;
         if ((result = hap(this.num) - hap(o.num)) != 0) return result;
-
         return this.num.compareTo(o.num);
     }
 
