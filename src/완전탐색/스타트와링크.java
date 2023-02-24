@@ -13,7 +13,7 @@ import java.util.StringTokenizer;
  *  출력값
  *  행렬에 값을 통해서 팀구성시 두팀의 능력치차이가 가장 작은경우를 출력
  */
-public class Main {
+public class 스타트와링크 {
 
     static int[][] board;
     static boolean[] ch;
