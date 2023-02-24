@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
 /**
  *  정렬후 시작점, 끝지점까지 반복하면서 안테나를놓고 최소값 출력
  */
-public class Main {
+public class 안테나 {
 
     static int n, answer;
     static int dis = Integer.MAX_VALUE;
