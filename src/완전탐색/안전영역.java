@@ -28,7 +28,7 @@ import java.util.StringTokenizer;
  * 1증가할때마다 안전한지역 수를 저장한다음에 최대값 출력
  *
  */
-public class Main2 {
+public class 안전영역 {
 
     static int n;
     static int[][] region;
@@ -65,8 +65,9 @@ public class Main2 {
     static void solution() {
 
         // 강수량 1부터 최대안전지역 높이 직전까지 전부 탐색해보기
-        for (int rain=1; rain<maxRegion; rain++) {
+        for (int rain=0; rain<maxRegion; rain++) {
             raining(rain);
+            safeCheck = new boolean[n][n];
         }
     }
 
@@ -98,8 +99,8 @@ public class Main2 {
                     while (!queue.isEmpty()) {
                         Point point = queue.poll();
                         for (int k=0; k<4; k++) {
-                            int nx = point.x + dx[i];
-                            int ny = point.y + dy[i];
+                            int nx = point.x + dx[k];
+                            int ny = point.y + dy[k];
                             if (nx >= 0 && nx < n
                                 && ny >= 0 && ny < n && safeCheck[nx][ny] == true) {
                                 safeCheck[nx][ny] = false;
