@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
  *
  *
  */
-public class Main {
+public class 문자열 {
 
     public static void main(String[] args) throws IOException {
 
