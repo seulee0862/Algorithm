@@ -26,7 +26,7 @@ import java.io.InputStreamReader;
     데이터타입의 크기가 메모리부족, 성능저하에 영향을끼친다는 걸 고려하면서
     코드를 작성 할 필요가 있을 것 같다
  */
-public class Main {
+public class 팩토리얼 {
 
     static int n;
     public static void main(String[] args) throws IOException {
