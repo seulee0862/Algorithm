@@ -26,9 +26,9 @@ public class 배열합치기 {
             arr[i] = Integer.parseInt(st.nextToken());
         }
         // Arrays.sort(arr); 성공
-        // mergerSort(arr, 0, arr.length-1); 시간초과
+         mergerSort(0, arr.length-1); //시간초과
         //insertSort(arr);
-        quickSort(arr, 0, arr.length-1);
+        //quickSort(arr, 0, arr.length-1);
 
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         for (int x : arr) {
@@ -53,20 +53,20 @@ public class 배열합치기 {
         }
     }
 
-    static void mergerSort(int[] arr, int left ,int right ) {
+    static void mergerSort(int left ,int right ) {
 
         if (left < right ) {
 
             int middle = left + (right-left)/2;
 
-            mergerSort(arr, left, middle);
-            mergerSort(arr, middle+1, right);
+            mergerSort(left, middle);
+            mergerSort(middle+1, right);
 
-            merge(arr, left, middle, right);
+            merge(left, middle, right);
         }
     }
 
-    static void merge (int[] arr, int left, int middle, int right) {
+    static void merge (int left, int middle, int right) {
 
         int l = left;
         int r = middle + 1;
@@ -81,7 +81,7 @@ public class 배열합치기 {
         while (l <= middle) sorted[k++] = arr[l++];
         while (r <= right) sorted[k++] = arr[r++];
 
-        for (int i=0; i<= right; i++) arr[i] = sorted[i];
+        for (int i=left; i<= right; i++) arr[i] = sorted[i];
     }
 
     private static void quickSort(int[] arr,int start, int end) {
