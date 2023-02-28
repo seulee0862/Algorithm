@@ -68,6 +68,7 @@ public class Main {
 
         for (int i = 0; i < board.length; i++) {
             for (int j = row; j < board.length - row; j++) {
+
                 if (i == col || i+1 == board.length - col) {
                     board[i][j] = " ";
                 }
