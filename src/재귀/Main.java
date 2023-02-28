@@ -24,6 +24,7 @@ public class Main {
      */
 
     static String[][] board;
+    static int mid, count = 1;
 
     public static void main(String[] args) throws IOException {
 
@@ -32,6 +33,7 @@ public class Main {
 
         int n = ((Integer.parseInt(br.readLine()) - 1) * 4) + 1;
 
+        mid = n/2;
         board = new String[n][n];
 
         for (int i = 0; i < n; i++) {
@@ -50,29 +52,26 @@ public class Main {
         bw.close();
     }
 
-    static int row = 1;
-    static int col = 1;
 
     static void draw(int n) {
 
         if (n == 1) return;
         else {
-            removeStar(n);
-            row += 1;
-            col += 2;
-            draw(n-4);
-        }
-    }
 
-    static void removeStar(int n) {
+            int start = mid - count;
+            int end = mid + count;
 
-        for (int i = 0; i < board.length; i++) {
-            for (int j = row; j < board.length - row; j++) {
 
-                if (i == col || i+1 == board.length - col) {
-                    board[i][j] = " ";
-                }
+            for (int i = start; i <= end; i++) {
+
+                board[start][i] = " ";
+                board[end][i] = " ";
+                board[i][start] = " ";
+                board[i][end] = " ";
             }
+
+            count += 2;
+            draw(n-4);
         }
     }
 }
