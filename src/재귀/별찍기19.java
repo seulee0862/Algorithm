@@ -3,7 +3,7 @@ package 재귀;
 import java.io.*;
 import java.util.Arrays;
 
-public class Main {
+public class 별찍기19 {
 
     /**
      *
