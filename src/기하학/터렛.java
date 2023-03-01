@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
  *  문제이해, 단순 기하문제
  */
 
-public class Main {
+public class 터렛 {
 
     static int[][] arr;
     public static void main(String[] args) throws IOException {
