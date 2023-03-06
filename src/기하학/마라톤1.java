@@ -3,7 +3,7 @@ package 기하학;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main {
+public class 마라톤1 {
 
     static int[][] arr;
     static int answer = Integer.MAX_VALUE;
