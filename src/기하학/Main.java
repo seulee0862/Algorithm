@@ -22,20 +22,21 @@ public class Main {
             arr[i][1] = Integer.parseInt(st.nextToken());
         }
 
-        for (int i = 1; i < n-1; i++) {
-            int x = arr[0][0];
-            int y = arr[0][1];
-            int dis = 0;
-            for (int j = 1; j < n-1; j++) {
-                if (j == i) continue;
-                dis += Math.abs(arr[j][0] - x) + Math.abs(arr[j][1] - y);
-                x = arr[j][0];
-                y = arr[j][1];
-            }
-            dis += Math.abs(arr[n-1][0] - x) + Math.abs(arr[n-1][1] - y);
-            answer = Math.min(answer, dis);
+        int dis = 0;
+        for (int i = 1; i < n; i++) {
+            dis += Math.abs(arr[i-1][0] - arr[i][0]) + Math.abs(arr[i-1][1] - arr[i][1]);
         }
 
-        System.out.println(answer);
+        int max = Integer.MIN_VALUE;
+        for (int i = 1; i < n-1; i++) {
+
+            int a = Math.abs(arr[i - 1][0] - arr[i][0]) + Math.abs(arr[i-1][1] - arr[i][1]);
+            int b = Math.abs(arr[i][0] - arr[i+1][0]) + Math.abs(arr[i][1] - arr[i+1][1]);
+            int c = Math.abs(arr[i-1][0] - arr[i+1][0]) + Math.abs(arr[i-1][1] - arr[i+1][1]);
+            max = Math.max(max, (a+b)-c);
+        }
+
+        System.out.println(dis - max);
     }
+
 }
