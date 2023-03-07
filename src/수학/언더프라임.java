@@ -5,8 +5,6 @@ import java.util.StringTokenizer;
 
 public class 언더프라임 {
 
-    static boolean[] prineFilter = new boolean[1000001];
-
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
