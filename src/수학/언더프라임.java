@@ -3,7 +3,7 @@ package 수학;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main2 {
+public class 언더프라임 {
 
     static boolean[] prineFilter = new boolean[1000001];
 
