@@ -1,9 +1,9 @@
-package 완전탐색;
+package greedy;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main {
+public class 기타줄 {
 
     public static void main(String[] args) throws IOException {
 

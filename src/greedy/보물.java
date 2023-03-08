@@ -1,4 +1,4 @@
-package 완전탐색;
+package greedy;
 
 import java.io.*;
 import java.util.Arrays;
