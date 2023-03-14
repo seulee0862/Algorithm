@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main {
+public class 감소하는수 {
 
     static ArrayList<Long> list;
 
