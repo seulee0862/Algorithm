@@ -4,79 +4,45 @@ public class Main2 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        //Str 입력받는다
-        String str = br.readLine();
-        //minValue 값 반복문 통해서 초기화 -> str은 -12.. +11..형태로 변경
-        //sum
-        int minValue = 0;
-        int sum = 0;
-        int idx = 0;
-        boolean plus = false;
-        // 0055 + 1122 - 33
-        while (true) {
-            char c = str.charAt(idx);
-            if (c == '0') {
-                str = str.substring(1);
-            }
-            else if (c == '+') {
-                int num = Integer.parseInt(str.substring(0, idx));
-                minValue += num;
-                plus = true;
-                break;
-            }
-            else if (c == '-') {
-                int num = Integer.parseInt(str.substring(0, idx));
-                minValue += num;
-                plus = false;
-                break;
-            }
-            else {
-                idx++;
+        //N을 입력받는다
+        int N = Integer.parseInt(br.readLine());
+
+        //검사시작
+        //N이 100 미만이면 N출력후 종료
+        if (N < 100) {
+            System.out.println(N);
+            return;
+        }
+        //N이 111 미만이면 99출력후 종료
+        if (N < 111) {
+            System.out.println(99);
+            return;
+        }
+
+        //한수 count 선언한다
+        int count = 99;
+        //111 ~ N까지 값을 구하면서
+        //100의 자리수 10의자리수 1의 자리수를 구한다.
+        for (int i = 111; i <= N; i++) {
+            int temp = i;
+            int hundred = temp/100;
+            temp = temp%100;
+            int ten = temp/10;
+            temp = temp%10;
+            int one = temp;
+
+            //100의 자리수 + d의 값이 10의자리수랑 같고
+            //100의 자리수 + 2d의 값이 1의자리수랑 같다면
+            //해당값을 한수로 저장한다
+            int d1 = ten - hundred;
+            int d2 = one - ten;
+            if (d1 == d2) {
+                count++;
             }
         }
 
-        //str 이 ""이 될때까지 반복
-        //str의 0번째가 i라면 str = substring(1)로 초기화
-        //str의 idx번째가 +라면 plus true
-        // 아니라면 false로 변경후 str 0번쨰 문자 잘라내기
-        idx = 0;
-        while (str != "") {
-
-            char c = str.charAt(idx);
-            if (c == '0') {
-                str = str.substring(0);
-            }
-            else if (c == '+') {
-                int num = Integer.parseInt(str.substring(0, idx));
-                if (plus){
-                    minValue += num;
-                }
-                else {
-                    minValue -= num;
-                }
-                plus = true;
-                str = str.substring(0, idx+1);
-            } else if (c == '-') {
-                int num = Integer.parseInt(str.substring(0, idx));
-                if (plus){
-                    minValue += num;
-                }
-                else {
-                    minValue -= num;
-                }
-                plus = false;
-                str = str.substring(0, idx+1);
-            }
-            else {
-                idx++;
-            }
-        }
-
-        System.out.println(minValue);
-
-
-
+        //한수 출력
+        System.out.println(count);
     }
 }
