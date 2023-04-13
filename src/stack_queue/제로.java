@@ -1,8 +1,10 @@
+package stack_queue;
+
 import java.io.*;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-public class Main {
+public class 제로 {
 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

@@ -1,3 +1,5 @@
+package stack_queue;
+
 import java.io.*;
 import java.util.*;
 
