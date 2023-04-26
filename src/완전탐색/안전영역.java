@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 /**
  * 입력값
  * N
- * N^2 행렬
+ * N^2 완전탐색.행렬
  *
  * 출력값
  * 안전한지역 최대값
