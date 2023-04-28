@@ -1,9 +1,11 @@
+package stack_queue;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class Main2 {
+public class 단어뒤집기 {
 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringBuilder sb = new StringBuilder();
@@ -12,16 +14,17 @@ public class Main2 {
 
         char[] inputArr = br.readLine().toCharArray();
         Stack<Character> stack = new Stack<>();
-        //stack.add(' ');
+
 
         boolean flag = false;
         for (int i = 0; i < inputArr.length; i++) {
             char c = inputArr[i];
 
-//            if (c == ' ') {
-//                reverseAndSbAppend(stack);
-//            }
-            //<>
+            if (!flag && c == ' ') {
+                reverseAndSbAppend(stack);
+                sb.append(" ");
+                continue;
+            }
             if (c == '<') {
                 reverseAndSbAppend(stack);
 
@@ -34,7 +37,6 @@ public class Main2 {
                 flag = false;
             }
 
-            // <
             if (!flag) {
                 if (c != '>') {
                     stack.add(c);
@@ -42,9 +44,6 @@ public class Main2 {
             }
         }
 
-//        if (stack.size() == 1) {
-//            stack.clear();
-//        }
         reverseAndSbAppend(stack);
 
         System.out.println(sb.toString());
@@ -56,4 +55,5 @@ public class Main2 {
             sb.append(str);
         }
     }
+
 }
