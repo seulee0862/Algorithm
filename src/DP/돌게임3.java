@@ -27,6 +27,10 @@ public class 돌게임3 {
         }
 
         answerPrint();
+
+        for (int i = 0; i < N; i++) {
+            System.out.println(i+ " : " + dp[i]);
+        }
     }
 
     private static void answerPrint() {
