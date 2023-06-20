@@ -3,13 +3,11 @@ package stack_queue;
 import java.io.*;
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.StringTokenizer;
 
 public class 중력큐 {
 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    static StringTokenizer st;
 
     static Deque<String>    deque = new ArrayDeque<>();
     static int              dequeDirectrion  = 3; // queue의 끝부분 시계방향
