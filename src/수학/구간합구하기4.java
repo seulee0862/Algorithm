@@ -1,3 +1,5 @@
+package 수학;
+
 import java.io.*;
 import java.util.StringTokenizer;
 
